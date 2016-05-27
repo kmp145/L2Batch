@@ -1,0 +1,10 @@
+#!/bin/bash
+
+dedicatedRAM=1024M
+apt-get update
+apt-get upgrade
+apt-get install openjdk-7-jdk
+apt-get install wget
+wget http://minecraft.net/download/minecraft_server.jar 
+chmod +x minecraft_server.jar
+java –Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
