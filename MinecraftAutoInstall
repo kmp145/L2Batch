@@ -1,13 +1,12 @@
 #!/bin/bash
 
-dedicatedRAM=1024M
 apt-get update
 apt-get upgrade
 apt-get install openjdk-7-jdk
 apt-get install wget
 mkdir minecraft
 cd minecraft
-wget https://s3.amazonaws.com/Minecraft.Download/versions/1.9.4/minecraft_server.1.9.4$
+wget https://s3.amazonaws.com/Minecraft.Download/versions/1.9.4/minecraft_server.1.9.4.jar
 chmod +x minecraft_server.1.9.4.jar
 rm eula.txt
 echo -e "eula=true" >> /minecraft/eula.txt
