@@ -5,5 +5,6 @@ HELLO="Hello World"
 echo $HELLO
 x=6
 z=4
-echo $x+$z
+y= expr $x + $z
+echo $y
 
