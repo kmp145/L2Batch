@@ -5,6 +5,19 @@ apt-get update
 apt-get upgrade
 apt-get install openjdk-7-jdk
 apt-get install wget
-wget http://minecraft.net/download/minecraft_server.jar 
-chmod +x minecraft_server.jar
-java –Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
+mkdir minecraft
+cd minecraft
+wget https://s3.amazonaws.com/Minecraft.Download/versions/1.9.4/minecraft_server.1.9.4$
+chmod +x minecraft_server.1.9.4.jar
+#python
+#filetosearch = '/minecraft/eula.txt'
+#texttoreplace = 'false'
+#texttoinsert = 'true'
+#s = open(filetosearch).read()
+#s = s.replace(texttoreplace, texttoinsert)
+#f = open(filetosearch, 'w')
+#f.write(s)
+#f.close()
+#quit()
+rm eula.txt
+echo -e "eula=true" >> /minecraft/eula.txt
