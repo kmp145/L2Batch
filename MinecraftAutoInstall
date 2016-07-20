@@ -8,6 +8,7 @@ mkdir minecraft
 cd /L2Batch/minecraft
 wget https://s3.amazonaws.com/Minecraft.Download/versions/1.9.4/minecraft_server.1.9.4.jar
 chmod +x minecraft_server.1.9.4.jar
+java -Xmx1024M -Xms1024M -jar minecraft_server.1.9.4.jar nogui
 rm eula.txt
 echo -e "eula=true" >> /L2Batch/minecraft/eula.txt
 java -Xmx1024M -Xms1024M -jar minecraft_server.1.9.4.jar nogui
