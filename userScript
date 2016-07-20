@@ -1,0 +1,32 @@
+
+def inputSomething(prompt):
+    userInput = ''
+    while userInput == '':
+        userInput = raw_input("Please enter your "+prompt+": ")
+        userInput = userInput.strip()
+    return userInput
+
+def addUser(userList):
+	print(len(userList))
+	newUser = {"userID":len(userList),"Username":inputSomething('username')\
+			,"PasswordTest":inputSomething('password')}
+	while newUser["Username"] in userList: #check if username is avalible
+		print ("Invalid username!")
+		newUser["Username"] = inputSomething('username')
+	userList.append(newUser)
+	saveChanges(userList,'userList.txt')
+	return userList
+
+def saveChanges(dataList,fileName):
+    FILE = open(fileName,'w')
+    json.dump(dataList,FILE)
+    FILE.close
+
+try:
+    FILE = open('userList.txt','r')
+    users = json.load(FILE)
+    FILE.close
+except:
+    print('no file')
+    users = []
+users = addUser(users)
